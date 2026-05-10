@@ -67,3 +67,14 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 ## Правило веток: feature/DVT-X
 
 В Dev Tools оставляем master чистым, работу ведём в ветке feature/DVT-<номер> - это упрощает проверку и дальнейший PR. Подход соответствует lightweight Git Flow.
+
+# DVT-4 — GitHub и первый Pull Request
+
+
+# DVT-5 — Чистый Git‑репозиторий
+
+<pre>Перед push: git status clean</pre>
+
+- После добавления новых инструментов — обновляйте .gitignore и делайте санитарный коммит при необходимости.
+- Если случайно удалили файлы без --cached, восстановитесь из локальной истории/изменений IDE.
+- Перед push проверяйте «status clean» в IDE и CLI; при расхождениях — ищите источник (новые артефакты/настройки).
