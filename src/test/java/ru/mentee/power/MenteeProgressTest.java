@@ -28,24 +28,4 @@ class MenteeProgressTest {
 
         assertThat(progress.readyForSprint()).isFalse();
     }
-
-    @Test
-    void summary() {
-    }
-
-    @Test
-    void readyForSprint() {
-    }
-
-    @Test
-    void menteeName() {
-    }
-
-    @Test
-    void sprintNumber() {
-    }
-
-    @Test
-    void plannedHoursPerWeek() {
-    }
 }

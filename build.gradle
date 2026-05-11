@@ -18,7 +18,25 @@ java {
 }
 
 application {
-    mainClass = 'ru.mentee.power.ProgressDemo'
+//    mainClass = 'ru.mentee.power.ProgressDemo'
+    mainClass = 'ru.mentee.power.devtools.progress.ProgressTracker'  // временно
+}
+
+application {
+    mainClass = 'ru.mentee.power.devtools.progress.ProgressTracker'
+}
+
+// ДОБАВЬТЕ ЭТУ ЗАДАЧУ
+run {
+    // Принудительно устанавливаем кодировку для вывода
+    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty 'sun.stdout.encoding', 'UTF-8'
+    systemProperty 'sun.stderr.encoding', 'UTF-8'
+
+    // Для Windows консоли
+    if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+        systemProperty 'jdk.console', 'java.base'
+    }
 }
 
 repositories {
@@ -34,4 +52,11 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        showStandardStreams = true
+        showCauses = true
+        showExceptions = true
+    }
 }
