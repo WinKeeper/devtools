@@ -3,14 +3,16 @@ package ru.mentee.power.devtools.progress;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("Testing ProgressTracker")
 class ProgressLoopTest {
 
   @Test
   @DisplayName("Must correctly calculate the total progress when an array of mentee is passed")
-  void shouldCalculateTotalProgress_whenMultipleMentees() {
+  void shouldCalculateTotalProgressWhenMultipleMentees() {
     // given - подготовка данных
     ProgressTracker tracker = new ProgressTracker();
     Mentee[] mentees = {
@@ -30,7 +32,7 @@ class ProgressLoopTest {
 
   @Test
   @DisplayName("Should handle the array correctly when all mentee have completed the course")
-  void shouldCalculateTotalProgress_whenAllMenteesCompleted() {
+  void shouldCalculateTotalProgressWhenAllMenteesCompleted() {
     // given
     ProgressTracker tracker = new ProgressTracker();
     Mentee[] mentees = {
@@ -49,7 +51,7 @@ class ProgressLoopTest {
 
   @Test
   @DisplayName("Should check array is empty")
-  void shouldCheckArrayIsEmpty_whenMethodStarted() {
+  void shouldCheckArrayIsEmptyWhenMethodStarted() {
     // given
     ProgressTracker tracker = new ProgressTracker();
     Mentee[] mentees = {};
@@ -64,14 +66,14 @@ class ProgressLoopTest {
 
   @Test
   @DisplayName("Should not throw exception when creating Mentee with valid data")
-  void shouldNotThrowException_whenCreatingValidMentee() {
+  void shouldNotThrowExceptionWhenCreatingValidMentee() {
     assertThatCode(() -> new Mentee("Иван", "Москва", "Backend", 12, 12))
         .doesNotThrowAnyException();
   }
 
   @Test
   @DisplayName("Should throw IllegalArgumentException when creating Mentee with invalid progress")
-  void shouldThrowIllegalArgumentException_whenCreatingInvalidMentee() {
+  void shouldThrowIllegalArgumentExceptionWhenCreatingInvalidMentee() {
 
     assertThatThrownBy(() ->
         new Mentee("Мария", "СПб", "Fullstack", 25, 12)
