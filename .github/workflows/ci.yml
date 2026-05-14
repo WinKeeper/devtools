@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -23,18 +23,21 @@ jobs:
           distribution: 'temurin'
           java-version: '25'
           cache: 'gradle'
-          
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Run Checkstyle (Main and Test)
-        run: .\gradlew.bat --no-daemon checkstyleMain checkstyleTest
+        run: ./gradlew --no-daemon checkstyleMain checkstyleTest
 
       - name: Run tests
-        run: .\gradlew.bat --no-daemon test
+        run: ./gradlew --no-daemon test
 
       - name: Generate JaCoCo report
-        run: .\gradlew.bat --no-daemon jacocoTestReport
+        run: ./gradlew --no-daemon jacocoTestReport
 
       - name: Verify code coverage
-        run: .\gradlew.bat --no-daemon jacocoTestCoverageVerification
+        run: ./gradlew --no-daemon jacocoTestCoverageVerification
 
       - name: Build project
-        run: .\gradlew.bat --no-daemon build
+        run: ./gradlew --no-daemon build
