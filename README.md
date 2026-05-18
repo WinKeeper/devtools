@@ -2,11 +2,11 @@
 
 [![Style and test](https://github.com/WinKeeper/devtools/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/WinKeeper/devtools/actions/workflows/ci.yml)
 
-# DVT-2 — Gradle-проект и базовый main
+## DVT-2 — Gradle-проект и базовый main
 
 https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 
-## 🚀 Quick Start Gradle: запуск задачи run, build, test через Gradle Tool Window и Run Anything (Ctrl + Ctrl)
+### 🚀 Quick Start Gradle: запуск задачи run, build, test через Gradle Tool Window и Run Anything (Ctrl + Ctrl)
 
 ### ▶️ Запуск задачи `run` (демонстрация программы)
 
@@ -34,7 +34,7 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 
 1. В консоли ввести команды: ./gradlew run, ./gradlew test или ./gradlew build
 
-## 📦 Packages: Зачем нужен пакет `ru.mentee.power`
+### 📦 Packages: Зачем нужен пакет `ru.mentee.power`
 
 **Пакет (package)** — это пространство имён, которое организует классы в иерархию и предотвращает конфликты имён.
 
@@ -44,7 +44,7 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 
 Таблица переменных/полей: menteeName, sprintNumber, plannedHoursPerWeek, правило readyForSprint().
 
-## Правило обратного доменного имени (Reverse Domain Name Convention)
+### Правило обратного доменного имени (Reverse Domain Name Convention)
 
 **Правило обратного доменного имени** — это стандарт именования пакетов в Java, при котором имя пакета строится из
 доменного имени компании/владельца, записанного в обратном порядке.
@@ -63,7 +63,7 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 - Пакет:        ru.mentee.power
 - Иерархия:     страна → компания → проект
 
-## MenteeProgress таблица полей
+### MenteeProgress таблица полей
 
 | Имя поля              | Тип данных | Описание                                          |
 |-----------------------|------------|---------------------------------------------------|
@@ -71,16 +71,16 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 | `sprintNumber`        | int        | Номер спринта                                     |
 | `plannedHoursPerWeek` | int        | Планируемое количество часов в неделю для спринта |
 
-# DVT-3 — Git Essentials: локальный цикл
+## DVT-3 — Git Essentials: локальный цикл
 
-## Правило веток: feature/DVT-X
+### Правило веток: feature/DVT-X
 
 В Dev Tools оставляем master чистым, работу ведём в ветке feature/DVT-<номер> - это упрощает проверку и дальнейший PR.
 Подход соответствует lightweight Git Flow.
 
-# DVT-4 — GitHub и первый Pull Request
+## DVT-4 — GitHub и первый Pull Request
 
-# DVT-5 — Чистый Git‑репозиторий
+## DVT-5 — Чистый Git‑репозиторий
 
 <pre>Перед push: git status clean</pre>
 
@@ -88,24 +88,24 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 - Если случайно удалили файлы без --cached, восстановитесь из локальной истории/изменений IDE.
 - Перед push проверяйте «status clean» в IDE и CLI; при расхождениях — ищите источник (новые артефакты/настройки).
 
-# DVT-6: Один цикл и контроль прогресса — освоение Debug
+## DVT-6: Один цикл и контроль прогресса — освоение Debug
 
-## Сценарий ручной проверки DVT-6
+### Сценарий ручной проверки DVT-6
 
-### Запуск приложения
+#### Запуск приложения
 
 1. Откройте Gradle Tool Window (View → Tool Windows → Gradle)
 2. Выполните: devtools → Tasks → application → run
 3. Ожидаемый вывод в Run Tool Window:
    Суммарно: пройдено 25 из 36 уроков, осталось 11 уроков
 
-### Запуск тестов
+#### Запуск тестов
 
 1. Откройте Gradle Tool Window
 2. Выполните: devtools → Tasks → verification → test
 3. Ожидаемый вывод: BUILD SUCCESSFUL, все тесты зелёные
 
-### Отладка через Debug
+#### Отладка через Debug
 
 1. Установите breakpoint на строке цикла while в ProgressTracker.calculateProgress
 2. Запустите Debug: кликните правой кнопкой на main → Debug 'ProgressTracker.main()'
@@ -114,20 +114,20 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 5. Используйте Evaluate Expression (Alt+F8): вычислите remainingLessons * 2
 6. Ожидаемый результат Evaluate: 14 (для completedLessons=5, totalLessons=12)
 
-### Что делать при ошибках
+#### Что делать при ошибках
 
 - Если вывод некорректен: проверьте логику цикла через Debug
 - Если тесты красные: откройте вывод теста, найдите AssertionError, скорректируйте метод
 - Если Debug не останавливается: убедитесь, что breakpoint установлен (красный кружок)
 
-# DVT-7: Checkstyle и культура кода — автоматизация стандартов
+## DVT-7: Checkstyle и культура кода — автоматизация стандартов
 
-## Кодстайл-гайд проекта devtools
+### Кодстайл-гайд проекта devtools
 
 Проект следует правилам Google Java Style Guide с адаптацией.
 Автоматическая проверка: ./gradlew checkstyleMain
 
-### 1. Именование методов: camelCase
+#### 1. Именование методов: camelCase
 
 До:    public void add_student(Student s) { }
 После: public void addStudent(Student student) { }
@@ -135,7 +135,7 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 Почему: Java Convention требует camelCase для методов.
 Источник: https://google.github.io/styleguide/javaguide.html#s5.3-camel-case
 
-### 2. Пробелы после if/for/while
+#### 2. Пробелы после if/for/while
 
 До:    if(condition) {
 После: if (condition) {
@@ -143,7 +143,7 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 Почему: улучшает читаемость, отделяет ключевое слово от выражения.
 Источник: Oracle Code Conventions — Whitespace
 
-### 3. Длина строки: максимум 120 символов
+#### 3. Длина строки: максимум 120 символов
 
 До:    public List getStudentsFromSpecificCityWithVeryLongName...
 После: public List getStudentsByCity(String city) {
@@ -151,7 +151,7 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 Почему: длинные строки затрудняют чтение в редакторе и при code review.
 Источник: https://google.github.io/styleguide/javaguide.html#s4.4-column-limit
 
-### 4. Порядок импортов
+#### 4. Порядок импортов
 
 До:    import java.util.List; import java.util.ArrayList; import java.io.File;
 После: import java.io.File; import java.util.ArrayList; import java.util.List;
@@ -159,7 +159,7 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 Почему: алфавитный порядок упрощает поиск импортов.
 Источник: IntelliJ IDEA → Code → Optimize Imports
 
-### 5. Фигурные скобки для if
+#### 5. Фигурные скобки для if
 
 До:    if (condition) doSomething();
 После: if (condition) { doSomething(); }
@@ -167,9 +167,9 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 Почему: скобки обязательны даже для однострочных блоков.
 Источник: https://google.github.io/styleguide/javaguide.html#s4.1.1-braces-always-used
 
-# DVT-9
+## DVT-9: Правила Code Review — культура ревью
 
-## Приоритетные навыки Code Review для Dev Tools
+### Приоритетные навыки Code Review для Dev Tools
 
 1. Проверка очевидных проблем перед запросом ревью В само-ревью ищите явные проблемы: забытые System.out.println для
    отладки, закомментированный код, TODO без контекста, опечатки в именах переменных, неиспользуемые импорты. Эти
@@ -319,3 +319,193 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 ```java
 
 ```
+
+## DVT-11: Информационный поиск и AI-инструменты разработчика
+
+## Личный глоссарий
+
+## Информационный поиск — результаты DVT-11
+
+### Запросы и источники
+
+| № | Запрос              | Операторы                                                         | Официальный источник                                                                                                                                       | Альтернатива                                                        | Статус | Дата проверки |
+|---|---------------------|-------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|--------|---------------|
+| 1 | Lombok Gradle Short | site:search.maven.org "lombok" OR site:mvnrepository.com "lombok" | https://central.sonatype.com/artifact/org.projectlombok/lombok/1.18.46                                                                                     | https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.46 | 200 OK | 18.05.2026    |
+| 2 | Stream API          | site:docs.oracle.com "stream api" intitle:api java 25             | https://docs.oracle.com/en/middleware/standalone/coherence/15.1.1/develop-applications/using-repository-api.html#GUID-65BEEC66-BB8D-43D4-A4D9-1A53B133A633 | https://www.baeldung.com/java-8-streams                             | 200 OK | 18.05.2026    |
+| 3 | Itellij IDEA keymap | site:www.jetbrains.com/help "keymap" "intellij idea"              | https://www.jetbrains.com/help/idea/settings-keymap.html#how-it-works                                                                                      | File->Settings->Keymap (Windows, Linux) Ctrl+Alt+S                  | 200 OK | 18.05.2026    |
+
+### AI-промпты и сравнение ассистентов
+
+#### Промпт 1: План решения
+
+**Контекст:** Я работаю над проектом Java 25 с Gradle сборщиком. Я создал на GitHub в разделе Actions CI.yml для
+автоматизации проверки.
+**Задача:** Необходимо настроить CI для stylecheck проверки test файлов при PR.
+**Ограничения:** Не пиши готовый конфиг CI.
+**Ожидаемый результат:** Основные причины почему test файлы не попадают в stylecheck CI проверку. Расположи по убыванию
+частоты их возникновения.
+**Критерии успеха:** Зелёный значёк в PR.
+
+**AI-1 (ChatGPT):**
+
+🚨 Возможные проблемы
+
+* CI не настроен на `pull_request`
+* Ограничения по веткам (`branches`)
+* Используются `paths` фильтры, исключающие test
+* Условие `if` не включает PR
+
+---
+
+* В CI не запускается task с тестами
+* Тесты явно отключены (`-x test`)
+* Используется не тот Gradle task
+
+---
+
+* Неправильная структура папок (`src/test/java`)
+* Неправильные имена тестов
+* Отсутствуют аннотации тестов
+
+---
+
+* Проблемы с зависимостями (JUnit)
+* Не настроен test runner
+
+---
+
+* Несовпадение версии Java (локально vs CI)
+* Runner не поддерживает Java 25
+
+---
+
+* Тесты пропущены или отключены
+* Тесты падают (CI красный)
+
+---
+
+* Кэш или некорректная сборка
+
+---
+
+✅ Итог
+
+Проблема обычно в одной из трёх зон:
+
+* триггер CI
+* конфигурация сборки
+* структура/настройка тестов
+
+**AI-2 (DeepSeek):**
+
+Ключевая проблема в вашем описании — **тестовые файлы не проверяются**, хотя сам CI запускается. Вот наиболее вероятные
+причины (без готового конфига):
+
+1. Неправильный `paths` или `paths-ignore` в триггере
+
+- У вас может быть `paths-ignore: ['**/*.java']` или наоборот `paths:` включает только `src/main/...`, исключая
+  `src/test/...`
+- Проверьте секцию `on.pull_request.paths` — тестовые пути должны быть либо явно перечислены, либо не указаны (тогда
+  проверяются все изменения)
+
+2. Команда сборки не включает тесты
+
+- В шагах CI используется `mvn compile` или `mvn install -DskipTests`
+- Нужно убедиться, что фаза `test` или `verify` выполняется без пропуска тестов
+
+3. Тесты не распознаются как тестовые классы
+
+- Java 25 может использовать новый синтаксис или preview-фичи, которые Maven/Gradle с текущей конфигурацией не считают
+  тестами
+- Проверьте naming conventions: `*Test.java`, `*Tests.java`, `Test*.java` или аннотации (JUnit 5)
+
+4. Неправильная версия JUnit или плагина surefire/failsafe
+
+- Плагин surefire может требовать явного указания версии для Java 25
+- Возможно, тесты написаны на JUnit 5, а используется surefire без зависимости `junit-platform-suite`
+
+5. Фильтрация тестов в Maven/Gradle
+
+- В конфиге может быть `<includes>` или `<excludes>` для тестов, которые не покрывают ваши тестовые файлы
+- Gradle: `test.include`/`test.exclude`
+
+6. Ошибка на уровне GitHub Actions workflow
+
+- `if: github.event_name == 'push'` — при PR событие `pull_request`, а не `push`
+- `if: success()` или `if: always()` может пропускать шаг с тестами
+
+7. Проблема с кэшированием
+
+- Если используется cache для `~/.m2`, возможно, туда попадает неверная версия JUnit, которая игнорирует тесты
+
+8. Тесты не компилируются из-за разных версий Java
+
+- В CI используется Java 25 для компиляции main, но тесты могут требовать другую версию или у них другие source/target
+
+Диагностика без изменения кода:
+
+- Посмотрите **логи сборки** — ищите `Running` или `Tests run:` — если строка отсутствует, тесты не запускались
+- Добавьте временно `--fail-at-end` или `--debug`, чтобы увидеть, какие цели выполняются
+- Проверьте **вывод команды** `mvn test` локально с теми же параметрами, что в CI
+
+**Сравнение:**
+
+Ответы охватывают основные возможные проблемы со сборщиком, CI, аннотацией и неймингом.
+
+#### Промпт 2: Проверка кода
+
+**Я написал код на Java 25:**
+public static void main(String[] args) {
+
+    MenteeProgress progress =
+        new MenteeProgress("Nikita", 1, 6);
+
+    System.out.println(progress.summary());
+
+    if (progress.readyForSprint()) {
+      System.out.println("Status: sprint ready");
+    } else {
+      System.out.println("Status: backlog first");
+    }
+
+    System.out.println("Ветка feature/DVT-3");
+
+}
+**Что проверить:**
+
+1. Логические ошибки
+2. Соответствие Code Conventions
+3. Производительность
+
+НЕ переписывай код — укажи проблемы и предложи как исправить.
+
+**AI-1 (ChatGPT):**
+
+✅ **Итог**
+
+❗ Нет валидации — возможны некорректные данные и ошибки в логике
+🔒 Захардкоженные значения — код трудно переиспользовать и тестировать
+🖨 System.out.println — нет уровней логирования и гибкости вывода
+🌐 Смешение языков — ухудшается читаемость и единообразие кода
+🧹 Лишний отладочный вывод — засоряет консоль и не нужен в production
+⚡ Неэффективный вывод — лишние I/O операции при множественных вызовах
+
+**AI-2 (DeepSeek):**
+
+✅ **Итог**
+
+* Нет валидации входных параметров конструктора (null, пустая строка, отрицательные числа)
+* Захардкоженные строковые литералы в выводе (магические строки)
+* Использование `System.out.println` вместо логирования в production-коде
+* Смешение языков (русский и английский в сообщениях)
+* Лишний отладочный вывод ("Ветка feature/DVT-3" явно не для конечного пользователя)
+* Нарушение JavaBeans convention: `readyForSprint()` должен называться `isReadyForSprint()`
+* Потенциально неэффективный вывод — двойной вызов тяжелых методов `summary()` и `readyForSprint()`
+* Отсутствие проверки корректности бизнес-логики: может ли `tasksCompleted` (6) превышать допустимое количество задач в
+  спринте?
+
+**Сравнение:**
+
+Основные замечания схожи: валидация, захардкоженные переменные, sout и т.д.
+
+## Дополнительные материалы
